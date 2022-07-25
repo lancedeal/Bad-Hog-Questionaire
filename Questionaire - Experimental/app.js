@@ -1,5 +1,4 @@
 
-
 // The Divs
 const clearDiv = document.querySelector('.questionaire-clearing')
 const acreDiv = document.querySelector('.questionaire-acres')
@@ -247,20 +246,16 @@ function calculateTotal(){
     const cDiv = document.createElement('div')
     cDiv.classList.add('display-row')
     const cDensity = document.createElement('span')
-    cDensity.textContent = clearDensity
-    const cAcre = document.createElement('span')
-    if(sub1Acre){
-        cAcre.textContent = `Acres: <1`
-    } else {
-        cAcre.textContent = `Acres: ` + acreNumber
-        console.log(acreNumber)
-    }
+    cDensity.classList.add('display-row-service')
+    if(acreNumber > 1){
+        cDensity.textContent = `${clearDensity} Clearing - ${acreNumber} Acres`
+    } else { cDensity.textContent = `${clearDensity} Clearing`}
     const cPrice = document.createElement('span')
+    cPrice.classList.add('display-row-cost')
     if(clearDensity == 'heavy'){
         cPrice.textContent = `$${2000 * acreInput.value}`
     } else { cPrice.textContent = `$${1500 * acreInput.value}` }
     cDiv.appendChild(cDensity)
-    cDiv.appendChild(cAcre)
     cDiv.appendChild(cPrice)
     estimatorDisplay.appendChild(cDiv)
 
@@ -268,34 +263,58 @@ function calculateTotal(){
     const dDiv = document.createElement('div')
     dDiv.classList.add('display-row')
     const dDisposal = document.createElement('span')
-    dDisposal.textContent = disposalMethod
-    const dAcre = document.createElement('span')
-    if(sub1Acre){
-        cAcre.textContent = `Acres: Less Than One`
-    } else {
-        cAcre.textContent = `Acres: ${acreInput}`
-    }
+    dDisposal.classList.add('display-row-service')
+    if(acreNumber > 1){
+        dDisposal.textContent = `${disposalMethod} Disposal - ${acreNumber} Acres`
+    } else{ dDisposal.textContent = `${disposalMethod} Disposal` }
     const dPrice = document.createElement('span')
+    dPrice.classList.add('display-row-cost')
     if(disposalMethod == 'burn'){
-        dPrice.textContent = 150 * acreInput
-    } else if(disposalMethod == 'mulch'){ dPrice.textContent = 250 * acreInput.value }
-    else { dPrice.textContent = 100 * acreInput.value}
+        dPrice.textContent = `$${150 * acreInput.value}`
+    } else if(disposalMethod == 'mulch'){ dPrice.textContent = `$${250 * acreInput.value}` }
+    else { dPrice.textContent = `$${100 * acreInput.value}` }
     dDiv.appendChild(dDisposal)
-    dDiv.appendChild(dAcre)
     dDiv.appendChild(dPrice)
     estimatorDisplay.appendChild(dDiv)
 
     // Equipment Options Display Div
     const eDiv = document.createElement('div')
     eDiv.classList.add('display-row')
+    const eDeposit = document.createElement('span')
+    eDeposit.classList.add('display-row-service')
+    const ePrice = document.createElement('span')
+    ePrice.classList.add('display-row-cost')
+    var skidSteerAdded
+    switch(disposalMethod){
+        case 'burn':
+            eDeposit.textContent = 'Skid Steer Deposit'
+            ePrice.textContent = '$500 + $80/Hourly'
+            skidSteerAdded = true
+            break
+        case 'mulch':
+            eDeposit.textContent = 'Chip Shredder Deposit'
+            ePrice.textContent = '$500 + $80/Hourly'
+            break
+        case 'haul':
+            eDeposit.textContent = 'Dump Trailer Deposit'
+            ePrice.textContent = '$300 + $80/Hourly'
+            break
+    }
+    eDiv.appendChild(eDeposit)
+    eDiv.appendChild(ePrice)
+    estimatorDisplay.appendChild(eDiv) 
+    if(skidSteerNeeded && !skidSteerAdded){
+        const eDiv2 = document.createElement('div')
+        eDiv2.classList.add('display-row')
+        const eDepo2 = document.createElement('span')
+        eDepo2.classList.add('display-row-service')
+        eDepo2.textContent = 'Skid Steer Deposit'
+        const ePrice2 = document.createElement('span')
+        ePrice2.classList.add('display-row-cost')
+        ePrice2.textContent = '$500 + $80/Hourly'
+        eDiv2.appendChild(eDepo2)
+        eDiv2.appendChild(ePrice2)
+        estimatorDisplay.appendChild(eDiv2) 
+    }
     
-    
-    
-
-    // Calculate Equipment Costs
-    /*
-        Mulch - Chip Shredder
-        Haul - Dump Trailer
-        Burn - Skid Steer
-    */
 }
