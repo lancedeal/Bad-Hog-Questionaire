@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Hog | Questionaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="estimator-questionaire">
+        <button id="start-questionaire" class="hover-btns">Estimate Services</button>
+        <div class="questionaire-item questionaire-clearing hidden">
+            <button class="close-x">X</button>
+            <p>What is the forest density?</p>
+            <div class="questionaire-choices">
+                <button id="lightC" class="questionaire-choice-item">Light</button>
+                <button id="moderateC" class="questionaire-choice-item">Moderate</button>
+                <button id="heavyC" class="questionaire-choice-item">Heavy</button>
+            </div>
+            <div class="questionaire-btns">
+                <button id="clear-btn-next" class="hover-btns">Next</button>
+            </div>
+        </div>
+        <div class="questionaire-item questionaire-acres hidden">
+            <button class="close-x">X</button>
+            <p>How many acres?</p>
+            <input id="acre-input" class="unit-input" type="number" value="1" required>
+            <!--
+            <div class="margin-bottom-very-light description-text"></div>
+            -->
+            <button id="acre-less-than-1" class="questionaire-choice-item">Less than 1 Acre</button>
+            <div class="margin-bottom-very-light description-text">*Overrides Input Field</div>
+            <div class="questionaire-btns">
+                <button id="acre-btn-back" class="hover-btns">Back</button>
+                <button id="acre-btn-next" class="hover-btns">Next</button>
+            </div>
+        </div>
+        <div class="questionaire-item questionaire-disposal hidden">
+            <button class="close-x">X</button>
+            <p>What is the preferred disposal method?</p>
+            <div class="questionaire-choices">
+                <button id="burnD" class="questionaire-choice-item">Burning</button>
+                <button id="mulchD" class="questionaire-choice-item">Mulching</button>
+                <button id="haulD" class="questionaire-choice-item">Haul-Off</button>
+            </div>
+            <div class="margin-bottom-very-light description-text">*Haul-Off is only available for 1 Acre or Less</div>
+            <div class="questionaire-btns">
+                <button id="dispo-btn-back" class="hover-btns">Back</button>
+                <button id="dispo-btn-done" class="hover-btns">Done</button>
+            </div>
+        </div>
+        <div class="after-questionaire">
+            <div class="questionaire-total">
+                    Total $<span class="questionaire-total-calculation">0</span>
+                    <button id='total-reset' class="hover-btns">Reset</button>
+            </div>
+            <div class="estimator-display">
+                <div class="display-row">
+                    <span>Light</span>
+                    <span>Acres: <span>2</span></span>
+                    <span>$3000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

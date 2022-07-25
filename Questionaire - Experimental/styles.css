@@ -1,0 +1,234 @@
+
+@font-face {
+    font-family: "Bahnschrift";
+    src: url(./Fonts/Bahnschrift/bahnschrift.ttf);
+}
+
+@font-face {
+    font-family: 'Gauge - Regular';
+    src: url(./Fonts/Gauge/Gauge-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Gauge - Heavy';
+    src: url(./Fonts/Gauge/Gauge-Heavy.otf);
+}
+
+@font-face {
+    font-family: 'Gauge - Oblique';
+    src: url(./Fonts/Gauge/Gauge-Oblique.otf);
+}
+
+@font-face {
+    font-family: 'Roboto Mono - Regular';
+    src: url(./Fonts/Roboto\ Mono/RobotoMono-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Mono - Medium';
+    src: url(./Fonts/Roboto\ Mono/RobotoMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Nunito - Regular';
+    src: url(./Fonts/Nunito/static/Nunito-Regular.ttf);
+}
+
+*{
+    --primary:#AF936E;
+    --secondary:#C6B08E;
+    --black:#010101;
+    --white:#f3f3f3;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    min-height: 100%;
+    background-color: var(--white);
+    font-family: 'Gauge - Heavy';
+    font-size: 1.2em;
+}
+
+.hidden{
+    opacity:0;
+    pointer-events: none;
+}
+
+.estimator-questionaire{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+}
+
+.questionaire-item{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0 2em 1em 2em;
+    border:#d6cfcf solid 3px;
+    border-radius: .5em;
+    width:25vw;
+    position: absolute;
+    top:4em;
+}
+
+.questionaire-choices{
+    margin-bottom: 1em;
+    display:flex;
+    justify-content: space-around;
+    width:90%;
+}
+
+.questionaire-choice-item{
+    padding:.2em;
+    border-radius:.2em;
+    border:#d6cfcf solid 3px;
+    color:var(--black);
+    background-color: var(--white);
+    font-family: 'Gauge - Heavy';
+}
+
+.questionaire-choice-item:hover{
+    cursor:pointer;
+}
+
+.questionaire-choice-selected{
+    padding:.2em;
+    border-radius:.2em;
+    border:#62BE77  solid 3px;
+}
+
+.questionaire-clearing{
+    width:25vw;
+}
+
+.questionaire-acres input{
+    margin-bottom:1.5em;
+}
+
+.questionaire-disposal{
+    background-color: var(--white);
+}
+
+.questionaire-acres{
+    width:25vw;
+}
+
+.questionaire-btns{
+    display:flex;
+    justify-content: space-around;
+    width:50%;
+}
+
+.margin-top-light{
+    margin-top: 2em;
+}
+
+.margin-bottom-light{
+    margin-bottom: 2em;
+}
+
+.margin-bottom-very-light{
+    margin-bottom: 1em;
+}
+
+.description-text{
+    font-size: .75em;
+    font-family: 'Nunito - Regular';
+}
+
+.unit-input{
+    text-align: center;
+    width:3em;
+    border:var(--black) solid 2px;
+    border-radius: .2em;
+    background-color: var(--white);
+}
+
+.close-x{
+    position:absolute;
+    background-color: var(--black);
+    color:var(--white);
+    font-size: .6em;
+    left:95%;
+    top:1%;
+    padding:.4em .6em;
+    font-weight: bold;
+    font-family: 'Roboto Mono - Regular';
+    border-radius: 50%;
+    border:none;
+}
+
+.close-x:hover{ cursor:pointer }
+
+.btn-disabled{
+    border:#BE211E   solid 3px;
+}
+
+.btn-disabled-2{ 
+    background-color: #909090;
+
+}
+
+.after-questionaire{
+    position: relative;
+    top:42vh;
+}
+.questionaire-total{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:25vw;
+    border-top: var(--black) solid 3px;
+    padding:.6em 0;
+    margin-bottom: 1.4em;
+}
+
+.questionaire-total-calculation{
+    padding-right: 1.5em;
+}
+
+.display-row{
+    display: flex;
+    justify-content: space-around;
+    padding: .3em 0;
+    border-bottom: var(--black) solid 2px;
+}
+
+.btn-disabled:hover{
+    cursor:auto;
+}
+
+.hover-btns:hover{
+    background-color: var(--white);
+    color:var(--black);
+    border:var(--black) solid 3px;
+    cursor:pointer;
+}
+.btn-disabled-2:hover{
+    cursor:auto;
+    background-color: #909090;
+    color:var(--white)
+}
+
+#acre-input{
+    font-size: 1.3em;
+}
+
+#total-reset{
+    margin-right: .5em;
+}
+
+button{
+    border:var(--black) solid 3px;
+    background-color: var(--black);
+    color:var(--white);
+    font-size:1em;
+    border-radius: .15em;
+    padding:.1em .5em;
+    font-family: 'Nunito - Regular';
+    box-sizing: border-box;
+}
