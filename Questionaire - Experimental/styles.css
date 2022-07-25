@@ -1,4 +1,5 @@
 
+
 @font-face {
     font-family: "Bahnschrift";
     src: url(./Fonts/Bahnschrift/bahnschrift.ttf);
@@ -53,6 +54,10 @@ html, body{
 .hidden{
     opacity:0;
     pointer-events: none;
+}
+
+.center-text{
+    text-align: center;
 }
 
 .estimator-questionaire{
@@ -193,9 +198,18 @@ html, body{
 
 .display-row{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: .3em 0;
     border-bottom: var(--black) solid 2px;
+}
+
+.display-row-service{
+    width:70%;
+    margin-left: 1em;
+}
+
+.display-row-cost{
+    width:25%;
 }
 
 .btn-disabled:hover{
