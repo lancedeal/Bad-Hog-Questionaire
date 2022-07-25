@@ -1,4 +1,5 @@
 
+
 // The Divs
 const clearDiv = document.querySelector('.questionaire-clearing')
 const acreDiv = document.querySelector('.questionaire-acres')
@@ -68,8 +69,11 @@ clearNext.addEventListener('click', () => { showAcre() })
 acreBack.addEventListener('click', () => { showClearing() })
 acreNext.addEventListener('click', () => { checkAcres();checkComplete();showDisposal() })
 dispoBack.addEventListener('click', () => { showAcre() })
-dispoDone.addEventListener('click', () => { calculateTotal();hideAll() })
-resetTotal.addEventListener('click', () => { total = 0 ; totalCalculation.textContent = total })
+dispoDone.addEventListener('click', () => { calculateTotal();hideAll() 
+    const estimatorDisplay = document.createElement('div')
+    estimatorDisplay.classList.add('estimator-display')
+    afterQuestionaire.appendChild(estimatorDisplay)})
+resetTotal.addEventListener('click', () => { total = 0 ; totalCalculation.textContent = total ; estimatorDisplay.remove() })
 
 
 function toggleClearing(data){
